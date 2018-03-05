@@ -49,7 +49,7 @@ module.exports = {
         let coinBulk = new Array();
             
         coinObjectSimple_list.forEach(function(element) {
-            let index = coinObjectComplete_list.findIndex(p => p.Symbol.toLowerCase() == element.ticker.toLowerCase());
+            let index = coinObjectComplete_list.findIndex(p => p.CoinName.toLowerCase() == element.name.toLowerCase());
             if (index > -1) { 
                 let CoinAux = coinObjectComplete_list[index];
                 CoinAux.SortOrder = element.rank;
