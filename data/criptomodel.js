@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 //mongoose.connect('mongodb://localhost/CriptoriumDB');
-mongoose.connect('mongodb://heroku_wk6lh0qg:1qu@nt$01@ds157818.mlab.com:57818/heroku_wk6lh0qg');
+mongoose.connect('mongodb://ds157818.mlab.com:57818/heroku_wk6lh0qg', 
+{user: 'quantbitdbadmin', pass: 'casa0101'});
 
 var criptoSchema = new mongoose.Schema({
     Id: String,
