@@ -1,7 +1,7 @@
 //mongoose.connect('mongodb://localhost/CriptoriumDB');
 var mongoose = require('mongoose');    
 
-var uri = 'mongodb://quantbitdbadmin:casa0101@ds157818.mlab.com:57818/heroku_wk6lh0qg';
+var uri = 'mongodb://heroku_wk6lh0qg:kpj5adqa6qqvp9qspdvflkggir@ds157818.mlab.com:57818/heroku_wk6lh0qg';
 
 var options = {
   "server" : {
