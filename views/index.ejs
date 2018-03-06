@@ -16,10 +16,30 @@
 <body>
     <br/>
   <div class="bs-example">
-    <div class="panel panel-primary" >
+
+    <div class="panel panel-default">
+        <!-- Default panel contents -->
         <div class="panel-heading"><%= title %></div>
-        <div class="panel-body" style="min-height: 10; max-height: 10;">Control Panel | <%= randon %></div>
-    </div>
+        <div class="panel-body">
+          <p>The following routes are currently available API features.</p>
+        </div>
+        <!-- List group -->
+        <div class="list-group">
+          <a href="/cryptos" class="list-group-item">/cryptos<span class="badge">50</span>
+          </a>
+          <a href="/cryptos/5a9d4c743c1ec46a0454e0f1" class="list-group-item">/cryptos/:id<span class="badge">145</span>
+          </a>
+          <a href="/cryptos/order/1" class="list-group-item">/cryptos/order/:order<span class="badge">30</span>
+          </a>  
+          <a href="/cryptos/code/BTC" class="list-group-item">/cryptos/code/:cod<span class="badge">65</span>
+          </a>
+          <a href="/cryptos/update" class="list-group-item">/cryptos/update<span class="badge">42</span>
+          </a>
+        </div>
+      </div>
+
+
   </div>
 </body>
 </html>
+
