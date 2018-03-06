@@ -5,7 +5,8 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'API Criptorium' });
+  let rand =  Math.floor(Math.random() * (1000 - 1)) + 1;
+  res.render('index', { title: 'QuantBit API', randon: rand });
 });
 
 router.get('/criptos/book', function (req, res, next) {
