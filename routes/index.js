@@ -76,4 +76,15 @@ router.get('/cryptos/code/:cod', function (req, res, next) {
   });
 });
 
+router.get('/cryptos/list/:list', function (req, res, next) {
+    var db = require('../data/criptomodel');
+    let limit = req.params.list;
+    var CriptoModel = db.Mongoose.model('criptos', db.CriptoSchema, 'criptos');
+    CriptoModel.find({}).sort({ SortOrder:1 }).limit(parseInt(limit)).exec(function (e, docs) {
+        res.json(docs);
+        res.end();
+    });
+  });
+  
+
 module.exports = router;

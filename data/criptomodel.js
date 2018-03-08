@@ -1,8 +1,10 @@
-//mongoose.connect('mongodb://localhost/CriptoriumDB');
 
-var mongoose = require('mongoose');    
+var mongoose = require('mongoose');
+require('mongoose-double')(mongoose);    
+var SchemaTypes = mongoose.Schema.Types;
 
-var uri = 'mongodb://heroku_wk6lh0qg:kpj5adqa6qqvp9qspdvflkggir@ds157818.mlab.com:57818/heroku_wk6lh0qg';
+var uri = 'mongodb://localhost/CriptoriumDB';
+//var uri = 'mongodb://heroku_wk6lh0qg:kpj5adqa6qqvp9qspdvflkggir@ds157818.mlab.com:57818/heroku_wk6lh0qg';
 
 var options = {
   "server" : {
@@ -35,9 +37,9 @@ var criptoSchema = new mongoose.Schema({
     FullyPremined: String,
     TotalCoinSupply: String,
     IsTrading: String,
-    SortOrder: String,
+    SortOrder: Number,
     Sponsored: String,
-    Usd: String
+    Usd: SchemaTypes.Double
 }, { collection: 'criptos' }
 );
 

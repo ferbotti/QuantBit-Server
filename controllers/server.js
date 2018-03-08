@@ -49,13 +49,24 @@ module.exports = {
         let coinBulk = new Array();
             
         coinObjectSimple_list.forEach(function(element) {
-            let index = coinObjectComplete_list.findIndex(p => p.CoinName.toLowerCase() == element.name.toLowerCase());
+            
+            // Há diferentes conteúdos para mesma definição nas 2 API´s
+            // Necessitando dupla verificação 
+
+            let index = coinObjectComplete_list.findIndex(p => p.Name.toLowerCase() == element.ticker.toLowerCase());
+            
+            if (index == -1) {
+                index = coinObjectComplete_list.findIndex(p => p.CoinName.toLowerCase() == element.name.toLowerCase());
+            }
+
             if (index > -1) { 
                 let CoinAux = coinObjectComplete_list[index];
-                CoinAux.SortOrder = element.rank;
-                CoinAux.Usd = element.usd;
+                CoinAux.Usd = parseFloat(element.usd);
                 CoinAux.ImageUrl = "https://www.cryptocompare.com".concat(coinObjectComplete_list[index].ImageUrl);
+                CoinAux.SortOrder = parseInt(element.rank);
+                
                 coinBulk.push(CoinAux);
+            
             }
         });    
         resolve(coinBulk);

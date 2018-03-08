@@ -16,6 +16,7 @@
     "express": "~4.15.5",
     "mongodb": "^3.0.2",
     "mongoose": "^5.0.6",
+    "mongoose-double": "0.0.1",
     "morgan": "~1.9.0",
     "nodemon": "^1.17.1",
     "request": "^2.83.0",
