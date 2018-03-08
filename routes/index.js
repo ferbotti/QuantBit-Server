@@ -76,6 +76,11 @@ router.get('/cryptos/code/:cod', function (req, res, next) {
   });
 });
 
+router.get('/architecture', function (req, res, next) {
+    res.render('architecture.ejs');    
+    res.end();
+});
+
 router.get('/cryptos/list/:list', function (req, res, next) {
     var db = require('../data/criptomodel');
     let limit = req.params.list;
