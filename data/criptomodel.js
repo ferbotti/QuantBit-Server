@@ -1,10 +1,13 @@
 
+var common = require('../controllers/common');  
 var mongoose = require('mongoose');
+
 require('mongoose-double')(mongoose);    
 var SchemaTypes = mongoose.Schema.Types;
 
-//var uri = 'mongodb://localhost/CriptoriumDB';
-var uri = 'mongodb://heroku_wk6lh0qg:kpj5adqa6qqvp9qspdvflkggir@ds157818.mlab.com:57818/heroku_wk6lh0qg';
+var config = common.config();
+
+var uri = config.mongo_uri; 
 
 var options = {
   "server" : {
